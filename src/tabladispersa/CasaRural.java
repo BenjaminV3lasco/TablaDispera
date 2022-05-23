@@ -2,12 +2,15 @@
 package tabladispersa;
 import java.io.*;
 public class CasaRural {
+    //Atributos
     private String codigo;
     private String poblacion;
     private String direccion;
     private int numHabitacion = 0;
     private double precio = 0.0;
     boolean esAlta;
+    
+    //Constructor
     public CasaRural()
     {
     esAlta = true;
@@ -19,15 +22,15 @@ public class CasaRural {
     BufferedReader entrada = new BufferedReader(
     new InputStreamReader(System.in));
     try {
-    System.out.print("\n Codigo (10 caracteres): ");
+    System.out.print("Codigo (10 caracteres): ");
     codigo = entrada.readLine();
-    System.out.print("\n Población: ");
+    System.out.print("Población: ");
     poblacion = entrada.readLine();
-    System.out.print("\n Dirección: ");
+    System.out.print("Dirección: ");
     direccion = entrada.readLine();
-    System.out.print("\n Número de habitaciones: ");
+    System.out.print("Número de habitaciones: ");
     numHabitacion = Integer.parseInt(entrada.readLine());
-    System.out.print("\n Precio por día de estancia: ");
+    System.out.print("Precio por día de estancia: ");
     precio = (new Double(entrada.readLine())).doubleValue();
     }
     catch (IOException e)
@@ -37,15 +40,18 @@ public class CasaRural {
     esAlta = false;
     }
     }
+    
     public String elCodigo()
     {
     return codigo;
     }
+    
     public void muestra()
     {
-    System.out.println("\n Casa Rural " + codigo);
+    System.out.println("Casa Rural " + codigo);
     System.out.println("Población: " + poblacion);
     System.out.println("Dirección: " + direccion);
+    System.out.println("Numero de habitaciones: " + numHabitacion);
     System.out.println("Precio por día: " + precio);
     }
 }
